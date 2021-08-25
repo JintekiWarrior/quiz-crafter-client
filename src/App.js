@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { Component, Fragment } from 'react'
+import { Route } from 'react-router-dom'
+import Navbar from './components/Navbar/Navbar'
 
-const App = () => {
-  return <div>Hello from app</div>
+class App extends Component {
+  render () {
+    return (
+      <Fragment>
+        <Navbar />
+      </Fragment>
+    )
+  }
 }
 
 export default App

@@ -4,7 +4,8 @@
   "homepage": "http://jintekiwarrior.github.io/client-g-tech",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^5.0.0-beta.5",
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
     "@material-ui/styled-engine-sc": "^5.0.0-beta.5",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
