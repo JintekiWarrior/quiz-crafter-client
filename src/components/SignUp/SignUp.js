@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { signUp } from './../../api/auth'
-// import Grid from '@material-ui/core/Grid'
-import Container from '@material-ui/core/Container'
+
+// Material ui components
 import Paper from '@material-ui/core/Paper'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
@@ -33,55 +33,53 @@ const SignUp = () => {
   }
 
   return (
-    <Container maxWidth="sm">
-      <Paper className={classes.paper}>
-        <Typography
-          variant='h4'
-          align='center'
+    <Paper className={classes.paper}>
+      <Typography
+        variant='h4'
+        align='center'
+      >
+        Sign Up
+      </Typography>
+      <form noValidate onSubmit={onSignUp}>
+        <TextField
+          className={classes.input}
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+          label="Email"
+          color="primary"
+          fullWidth
+          required
+        />
+        <TextField
+          className={classes.input}
+          value={password}
+          onChange={e => setPassword(e.target.value)}
+          label="Password"
+          type="password"
+          color="primary"
+          fullWidth
+          required
+        />
+        <TextField
+          className={classes.input}
+          value={passwordConfirm}
+          onChange={e => setPasswordConfirm(e.target.value)}
+          label="Password Confirm"
+          type="password"
+          color="primary"
+          fullWidth
+          required
+        />
+        <Button
+          variant='contained'
+          color="primary"
+          type="submit"
+          fullWidth
         >
-          Sign Up
-        </Typography>
-        <form noValidate onSubmit={onSignUp}>
-          <TextField
-            className={classes.input}
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            label="Email"
-            color="primary"
-            fullWidth
-            required
-          />
-          <TextField
-            className={classes.input}
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-            label="Password"
-            type="password"
-            color="primary"
-            fullWidth
-            required
-          />
-          <TextField
-            className={classes.input}
-            value={passwordConfirm}
-            onChange={e => setPasswordConfirm(e.target.value)}
-            label="Password Confirm"
-            type="password"
-            color="primary"
-            fullWidth
-            required
-          />
-          <Button
-            variant='contained'
-            color="primary"
-            type="submit"
-            fullWidth
-          >
-            Submit
-          </Button>
-        </form>
-      </Paper>
-    </Container>
+          Submit
+        </Button>
+      </form>
+    </Paper>
   )
 }
 

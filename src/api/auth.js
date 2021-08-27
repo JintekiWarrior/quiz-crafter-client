@@ -14,3 +14,16 @@ export const signUp = (email, password, passwordConfirm) => {
     }
   })
 }
+
+export const signIn = (email, password) => {
+  return axios({
+    method: 'POST',
+    url: apiUrl + '/sign-in',
+    data: {
+      credentials: {
+        email: email,
+        password: password
+      }
+    }
+  })
+}
