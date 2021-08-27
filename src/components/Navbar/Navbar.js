@@ -5,7 +5,8 @@ const Navbar = () => {
   return (
     <AppBar position="static">
       <Toolbar style={{ justifyContent: 'flex-end' }}>
-        <Button color="inherit">Login</Button>
+        <Button href='/sign-up' color="inherit">Sign Up</Button>
+        <Button href='/sign-in' color="inherit">Sign In</Button>
       </Toolbar>
     </AppBar>
   )

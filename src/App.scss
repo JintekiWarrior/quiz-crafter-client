@@ -1,0 +1,9 @@
+.page-div {
+  padding: 25px;
+}
+
+@media only screen and (max-width: 420px) {
+  .page-div {
+    padding: 10px;
+  }
+}
