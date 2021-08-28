@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { signUp } from './../../api/auth'
+import { Redirect } from 'react-router-dom'
 
 // Material ui components
 import Paper from '@material-ui/core/Paper'
@@ -22,14 +23,30 @@ const SignUp = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [passwordConfirm, setPasswordConfirm] = useState('')
+  const [redirect, setRedirect] = useState(false)
 
   const classes = useStyles()
 
   const onSignUp = event => {
     event.preventDefault()
-    signUp(email, password, passwordConfirm)
-      .then(res => console.log(res.data))
-      .catch(err => console.log(err))
+    // signUp(email, password, passwordConfirm)
+    //   .then(res => console.log(res.data))
+    //   .catch(err => console.log(err))
+    const createUser = async () => {
+      try {
+        const res = await signUp(email, password, passwordConfirm)
+        console.log(res.data)
+        setRedirect(true)
+      } catch (error) {
+        console.log('error message: ', error)
+      }
+    }
+
+    createUser()
+  }
+
+  if (redirect) {
+    return <Redirect to="/" />
   }
 
   return (

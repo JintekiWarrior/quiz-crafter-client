@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { signIn } from './../../api/auth'
+import { Redirect } from 'react-router-dom'
 
 // Material ui components
 import Paper from '@material-ui/core/Paper'
@@ -21,14 +22,27 @@ const useStyles = makeStyles({
 const SignIn = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [redirect, setRedirect] = useState(false)
 
   const classes = useStyles()
 
   const onSignIn = event => {
     event.preventDefault()
-    signIn(email, password)
-      .then(res => console.log(res.data))
-      .then(err => console.log(err))
+    const fetchUser = async () => {
+      try {
+        const res = await signIn(email, password)
+        console.log(res.data)
+        setRedirect(true)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    fetchUser()
+  }
+
+  if (redirect) {
+    return <Redirect to="/" />
   }
 
   return (
@@ -39,7 +53,7 @@ const SignIn = () => {
       >
         Sign In
       </Typography>
-      <form noValidate onSubmit={onSignIn}>
+      <form onSubmit={onSignIn}>
         <TextField
           className={classes.input}
           value={email}
