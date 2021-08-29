@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { signUp } from './../../api/auth'
-import { Redirect } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 // Material ui components
 import Paper from '@material-ui/core/Paper'
@@ -23,7 +23,6 @@ const SignUp = ({ setUser }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [passwordConfirm, setPasswordConfirm] = useState('')
-  const [redirect, setRedirect] = useState(false)
 
   const classes = useStyles()
 
@@ -36,17 +35,13 @@ const SignUp = ({ setUser }) => {
       try {
         const res = await signUp(email, password, passwordConfirm)
         setUser(res.data.user)
-        setRedirect(true)
+        history.push('/')
       } catch (error) {
         console.log('error message: ', error)
       }
     }
 
     createUser()
-  }
-
-  if (redirect) {
-    return <Redirect to="/" />
   }
 
   return (
@@ -100,4 +95,4 @@ const SignUp = ({ setUser }) => {
   )
 }
 
-export default SignUp
+export default withRouter(SignUp)
