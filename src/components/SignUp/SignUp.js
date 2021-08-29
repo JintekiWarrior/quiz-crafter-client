@@ -19,7 +19,7 @@ const useStyles = makeStyles({
   }
 })
 
-const SignUp = ({ setUser }) => {
+const SignUp = ({ setUser, history }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [passwordConfirm, setPasswordConfirm] = useState('')
