@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { signIn } from './../../api/auth'
 import { withRouter } from 'react-router-dom'
+import { changePassword } from './../../api/auth'
 
-// Material ui components
+// material ui components
 import Paper from '@material-ui/core/Paper'
+import Typography from '@material-ui/core/Typography'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
-import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core'
 
 const useStyles = makeStyles({
@@ -19,51 +19,50 @@ const useStyles = makeStyles({
   }
 })
 
-const SignIn = ({ user, setUser, history }) => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+const ChangePassword = ({ user, history }) => {
+  const [oldPass, setOldPass] = useState('')
+  const [newPass, setNewPass] = useState('')
 
   const classes = useStyles()
 
-  const onSignIn = event => {
+  const onChangePassword = event => {
     event.preventDefault()
-    const fetchUser = async () => {
+    const updatePassword = async () => {
       try {
-        const res = await signIn(email, password)
-        setUser(res.data.user)
+        const res = await changePassword(user, oldPass, newPass)
+        console.log('changepassword response:', res)
         history.push('/')
       } catch (error) {
         console.log(error)
       }
     }
 
-    fetchUser()
+    updatePassword()
   }
 
   return (
     <Paper className={classes.paper}>
       <Typography
-        variant='h4'
-        align='center'
+        variant="h4"
+        align="center"
       >
-        Sign In
+        Change Password
       </Typography>
-      <form onSubmit={onSignIn}>
+      <form onSubmit={onChangePassword}>
         <TextField
           className={classes.input}
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-          label="Email"
+          value={oldPass}
+          onChange={e => setOldPass(e.target.value)}
+          label="old password"
           color="primary"
           fullWidth
           required
         />
         <TextField
           className={classes.input}
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-          label="Password"
-          type="password"
+          value={newPass}
+          onChange={e => setNewPass(e.target.value)}
+          label="new password"
           color="primary"
           fullWidth
           required
@@ -81,4 +80,4 @@ const SignIn = ({ user, setUser, history }) => {
   )
 }
 
-export default withRouter(SignIn)
+export default withRouter(ChangePassword)

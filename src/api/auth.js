@@ -27,3 +27,20 @@ export const signIn = (email, password) => {
     }
   })
 }
+
+export const changePassword = (user, oldPass, newPass) => {
+  console.log(user)
+  return axios({
+    method: 'PATCH',
+    url: apiUrl + '/change-password',
+    headers: {
+      'Authorization': `Bearer ${user.token}`
+    },
+    data: {
+      passwords: {
+        old: oldPass,
+        new: newPass
+      }
+    }
+  })
+}

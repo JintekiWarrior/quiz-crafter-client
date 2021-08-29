@@ -19,7 +19,7 @@ const useStyles = makeStyles({
   }
 })
 
-const SignUp = () => {
+const SignUp = ({ setUser }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [passwordConfirm, setPasswordConfirm] = useState('')
@@ -35,7 +35,7 @@ const SignUp = () => {
     const createUser = async () => {
       try {
         const res = await signUp(email, password, passwordConfirm)
-        console.log(res.data)
+        setUser(res.data.user)
         setRedirect(true)
       } catch (error) {
         console.log('error message: ', error)
