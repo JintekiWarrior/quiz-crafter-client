@@ -44,3 +44,13 @@ export const changePassword = (user, oldPass, newPass) => {
     }
   })
 }
+
+export const signOut = user => {
+  return axios({
+    method: 'DELETE',
+    url: apiUrl + '/sign-out',
+    headers: {
+      'Authorization': `Bearer ${user.token}`
+    }
+  })
+}

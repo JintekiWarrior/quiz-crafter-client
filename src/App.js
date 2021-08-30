@@ -7,6 +7,7 @@ import Navbar from './components/Navbar/Navbar'
 import SignUp from './components/SignUp/SignUp'
 import SignIn from './components/SignIn/SignIn'
 import ChangePassword from './components/ChangePassword/ChangePassword'
+import SignOut from './components/SignOut/SignOut'
 
 // material ui components
 import Container from '@material-ui/core/Container'
@@ -20,7 +21,7 @@ class App extends Component {
 
   setUser = user => this.setState({ user })
 
-  // clearUser = () => this.setState({ user: null })
+  clearUser = () => this.setState({ user: null })
 
 
   render () {
@@ -38,6 +39,9 @@ class App extends Component {
           )} />
           <AuthRoute user={user} path='/change-password' render={() => (
             <ChangePassword user={user} />
+          )} />
+          <AuthRoute user={user} path='/sign-out' render={() => (
+            <SignOut user={user} clearUser={this.clearUser} />
           )} />
         </Container>
       </Fragment>
