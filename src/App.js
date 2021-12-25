@@ -8,9 +8,10 @@ import SignUp from './components/SignUp/SignUp'
 import SignIn from './components/SignIn/SignIn'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 import SignOut from './components/SignOut/SignOut'
+import Home from './components/Home/Home'
 
 // material ui components
-import Container from '@material-ui/core/Container'
+// import Container from '@material-ui/core/Container'
 
 class App extends Component {
   constructor (props) {
@@ -30,20 +31,21 @@ class App extends Component {
     return (
       <Fragment>
         <Navbar user={user} />
-        <Container maxWidth="sm">
-          <Route path='/sign-up' render={() => (
-            <SignUp user={user} setUser={this.setUser} />
-          )} />
-          <Route path='/sign-in' render={() => (
-            <SignIn  user={user} setUser={this.setUser} />
-          )} />
-          <AuthRoute user={user} path='/change-password' render={() => (
-            <ChangePassword user={user} />
-          )} />
-          <AuthRoute user={user} path='/sign-out' render={() => (
-            <SignOut user={user} clearUser={this.clearUser} />
-          )} />
-        </Container>
+        <Route path='/sign-up' render={() => (
+          <SignUp user={user} setUser={this.setUser} />
+        )} />
+        <Route path='/sign-in' render={() => (
+          <SignIn  user={user} setUser={this.setUser} />
+        )} />
+        <AuthRoute user={user} path='/change-password' render={() => (
+          <ChangePassword user={user} />
+        )} />
+        <AuthRoute user={user} path='/sign-out' render={() => (
+          <SignOut user={user} clearUser={this.clearUser} />
+        )} />
+        <AuthRoute user={user} path='/home' render={() => (
+          <Home user={user} />
+        )} />
       </Fragment>
     )
   }

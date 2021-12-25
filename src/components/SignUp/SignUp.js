@@ -1,36 +1,16 @@
+import './SignUp.scss'
 import React, { useState } from 'react'
 import { signUp } from './../../api/auth'
 import { withRouter } from 'react-router-dom'
-
-// Material ui components
-import Paper from '@material-ui/core/Paper'
-import TextField from '@material-ui/core/TextField'
-import Button from '@material-ui/core/Button'
-import Typography from '@material-ui/core/Typography'
-import { makeStyles } from '@material-ui/core'
-
-const useStyles = makeStyles({
-  input: {
-    marginBottom: '2rem'
-  },
-
-  paper: {
-    padding: '2rem',
-  }
-})
 
 const SignUp = ({ setUser, history }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [passwordConfirm, setPasswordConfirm] = useState('')
 
-  const classes = useStyles()
-
   const onSignUp = event => {
     event.preventDefault()
-    // signUp(email, password, passwordConfirm)
-    //   .then(res => console.log(res.data))
-    //   .catch(err => console.log(err))
+
     const createUser = async () => {
       try {
         const res = await signUp(email, password, passwordConfirm)
@@ -45,53 +25,58 @@ const SignUp = ({ setUser, history }) => {
   }
 
   return (
-    <Paper className={classes.paper}>
-      <Typography
+    <div className="sign-up">
+      <h2
+        className="sign-up__heading"
         variant='h4'
         align='center'
       >
         Sign Up
-      </Typography>
-      <form noValidate onSubmit={onSignUp}>
-        <TextField
-          className={classes.input}
+      </h2>
+      <form 
+        className="sign-up__form"
+        noValidate 
+        onSubmit={onSignUp}
+      >
+        <input
+          className="sign-up__input"
+          placeholder='EMAIL'
           value={email}
           onChange={e => setEmail(e.target.value)}
           label="Email"
           color="primary"
-          fullWidth
           required
         />
-        <TextField
-          className={classes.input}
+        <input
+          className="sign-up__input"
+          placeholder='PASSWORD'
           value={password}
           onChange={e => setPassword(e.target.value)}
           label="Password"
           type="password"
           color="primary"
-          fullWidth
           required
         />
-        <TextField
-          className={classes.input}
+        <input
+          className="sign-up__input"
+          placeholder='PASSWORD CONFIRMATION'
           value={passwordConfirm}
           onChange={e => setPasswordConfirm(e.target.value)}
           label="Password Confirm"
           type="password"
           color="primary"
-          fullWidth
           required
         />
-        <Button
+        <button
+          className='sign-up__btn'
           variant='contained'
           color="primary"
           type="submit"
-          fullWidth
         >
           Submit
-        </Button>
+        </button>
       </form>
-    </Paper>
+    </div>
   )
 }
 

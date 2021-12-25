@@ -1,3 +1,18 @@
-html, body {
-  height: 100vh;
+/* Basic Reset: Applies these properties and values to all html elements. * is the universal selector. */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  /* root font size. 1rem is 10px now. Use a percentage just in case the user changes the font size. */
+  font-size: 62.5%;
+}
+
+/* It is good practice to define all the font properties in the body to be inherited by all the other elements.*/
+body {
+  box-sizing: border-box;
 }

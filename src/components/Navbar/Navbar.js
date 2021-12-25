@@ -35,6 +35,14 @@ const Navbar = ({ user }) => {
       >
         Sign Out
       </Link>
+      <Link
+        className={classes.link}
+        component={RouterLink}
+        to='/home'
+        color='inherit'
+      >
+        Home
+      </Link>
     </Fragment>
   )
 

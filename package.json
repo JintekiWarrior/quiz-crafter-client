@@ -1,7 +1,7 @@
 {
-  "name": "client-g-tech",
+  "name": "quiz-crafter-client",
   "version": "0.1.0",
-  "homepage": "http://jintekiwarrior.github.io/client-g-tech",
+  "homepage": "http://jintekiwarrior.github.io/quiz-crafter-client",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.12.3",
