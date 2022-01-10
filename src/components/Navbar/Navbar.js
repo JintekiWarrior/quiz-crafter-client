@@ -8,22 +8,28 @@ const Navbar = ({ user }) => {
   const signedIn = (
     <Fragment>
       <Link
-        className="navbar__link"
+        className="navbar__link navbar__l1"
         to='/change-password'
       >
         Change Password
       </Link>
       <Link
-        className="navbar__link"
+        className="navbar__link navbar__l2"
         to='/sign-out'
       >
         Sign Out
       </Link>
       <Link
-        className="navbar__link"
+        className="navbar__link navbar__l3"
         to='/home'
       >
         Home
+      </Link>
+      <Link
+        className='navbar__link navbar__l4'
+        to='/create-quiz'
+      >
+        Create a Quiz
       </Link>
     </Fragment>
   )

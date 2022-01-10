@@ -1,83 +1,75 @@
+import './SignIn.scss'
 import React, { useState } from 'react'
 import { signIn } from './../../api/auth'
 import { withRouter } from 'react-router-dom'
 
-// Material ui components
-import Paper from '@material-ui/core/Paper'
-import TextField from '@material-ui/core/TextField'
-import Button from '@material-ui/core/Button'
-import Typography from '@material-ui/core/Typography'
-import { makeStyles } from '@material-ui/core'
-
-const useStyles = makeStyles({
-  input: {
-    marginBottom: '2rem'
-  },
-
-  paper: {
-    padding: '2rem',
-  }
-})
-
-const SignIn = ({ user, setUser, history }) => {
+// Sign in component
+// Controls the Sign in component accessed by clicking Sign In on the navbar
+const SignIn = ({ setUser, history }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const classes = useStyles()
-
+  // Event to handle the sign in request sent to the server.
   const onSignIn = event => {
     event.preventDefault()
-    const fetchUser = async () => {
+
+    const EnterUser = async () => {
       try {
         const res = await signIn(email, password)
         setUser(res.data.user)
         history.push('/')
       } catch (error) {
-        console.log(error)
+        console.log('error message: ', error)
       }
     }
 
-    fetchUser()
+    EnterUser()
   }
 
+  // JSX component
   return (
-    <Paper className={classes.paper}>
-      <Typography
+    <div className="sign-in">
+      <h2
+        className="sign-in__heading"
         variant='h4'
         align='center'
       >
         Sign In
-      </Typography>
-      <form onSubmit={onSignIn}>
-        <TextField
-          className={classes.input}
+      </h2>
+      <form 
+        className="sign-in__form"
+        noValidate 
+        onSubmit={onSignIn}
+      >
+        <input
+          className="sign-in__input"
+          placeholder='EMAIL'
           value={email}
           onChange={e => setEmail(e.target.value)}
           label="Email"
           color="primary"
-          fullWidth
           required
         />
-        <TextField
-          className={classes.input}
+        <input
+          className="sign-in__input"
+          placeholder='PASSWORD'
           value={password}
           onChange={e => setPassword(e.target.value)}
           label="Password"
           type="password"
           color="primary"
-          fullWidth
           required
         />
-        <Button
+        <button
+          className='sign-in__btn'
           variant='contained'
           color="primary"
           type="submit"
-          fullWidth
         >
           Submit
-        </Button>
+        </button>
       </form>
-    </Paper>
+    </div>
   )
 }
 

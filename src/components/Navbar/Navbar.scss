@@ -23,13 +23,32 @@
     }
 
     &__link-container {
-        font-size: 2rem;
+        font-size: 3rem;
         letter-spacing: .3rem;
         font-weight: 400;
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
     }
 
     &__link {
         text-decoration: none;
         color: #fff;
+    }
+
+    &__l1 {
+        order: 2;
+    }
+
+    &__l2 {
+        order: 3;
+    }
+
+    &__l3 {
+        order: -1;
+    }
+
+    &__l4 {
+        order: 1;
     }
 }
