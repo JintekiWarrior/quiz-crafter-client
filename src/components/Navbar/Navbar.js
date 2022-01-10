@@ -1,45 +1,27 @@
+import './Navbar.scss'
+import booksPic from '../../images/books.jpg'
 import React, { Fragment } from 'react'
-import { AppBar, Toolbar } from '@material-ui/core'
-import { Link as RouterLink } from 'react-router-dom'
-import Link from '@material-ui/core/Link'
-import { makeStyles } from '@material-ui/core'
-
-const useStyles = makeStyles({
-  link: {
-    margin: '1rem'
-  },
-
-  navBar: {
-    marginBottom: '2rem'
-  }
-})
+import { Link } from 'react-router-dom'
 
 const Navbar = ({ user }) => {
-  const classes = useStyles()
 
   const signedIn = (
     <Fragment>
       <Link
-        className={classes.link}
-        component={RouterLink}
+        className="navbar__link"
         to='/change-password'
-        color='inherit'
       >
         Change Password
       </Link>
       <Link
-        className={classes.link}
-        component={RouterLink}
+        className="navbar__link"
         to='/sign-out'
-        color='inherit'
       >
         Sign Out
       </Link>
       <Link
-        className={classes.link}
-        component={RouterLink}
+        className="navbar__link"
         to='/home'
-        color='inherit'
       >
         Home
       </Link>
@@ -49,18 +31,14 @@ const Navbar = ({ user }) => {
   const notSignedIn = (
     <Fragment>
       <Link
-        className={classes.link}
-        component={RouterLink}
+        className="navbar__link"
         to='/sign-up'
-        color='inherit'
       >
         Sign Up
       </Link>
       <Link
-        className={classes.link}
-        component={RouterLink}
+        className="navbar__link"
         to='/sign-in'
-        color='inherit'
       >
         Sign In
       </Link>
@@ -68,11 +46,13 @@ const Navbar = ({ user }) => {
   )
 
   return (
-    <AppBar position="static" className={classes.navBar}>
-      <Toolbar style={{ justifyContent: 'flex-end' }}>
+    <div className="navbar">
+      <img className="navbar__image" src={booksPic} alt="picture of books"></img>
+      <h1 className="navbar__heading">Quiz Crafter</h1>
+      <div className="navbar__link-container">
         {user ? signedIn : notSignedIn}
-      </Toolbar>
-    </AppBar>
+      </div>
+    </div>
   )
 }
 

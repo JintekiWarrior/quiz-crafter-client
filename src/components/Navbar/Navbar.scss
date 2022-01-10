@@ -1,0 +1,35 @@
+.navbar {
+    position: relative;
+    height: 30vh;
+    width: 90vw;
+    margin: 3rem auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    &__image {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        position: absolute;
+        z-index: -1;
+        filter: brightness(50%);
+    }
+
+    &__heading {
+        color: #fff;
+    }
+
+    &__link-container {
+        font-size: 2rem;
+        letter-spacing: .3rem;
+        font-weight: 400;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: #fff;
+    }
+}
