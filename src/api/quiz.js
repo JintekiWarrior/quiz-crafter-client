@@ -1,7 +1,6 @@
 /*** create quiz api request routes ***/ 
-import apiUrl from "../apiConfig";
-import axois from 'axios'
-import axios from "axios";
+import apiUrl from "../apiConfig"
+import axios from "axios"
 
 export const createQuiz = (user, title, description) => {
     return axios({
