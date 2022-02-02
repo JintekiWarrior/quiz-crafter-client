@@ -31,6 +31,12 @@ const Navbar = ({ user }) => {
       >
         Create a Quiz
       </Link>
+      <Link
+        className='navbar__link navbar__l5'
+        to='/show-quizzes'
+      >
+        Show Quizzes
+      </Link>
     </Fragment>
   )
 
@@ -53,7 +59,7 @@ const Navbar = ({ user }) => {
 
   return (
     <div className="navbar">
-      <img className="navbar__image" src={booksPic} alt="picture of books"></img>
+      <img className="navbar__image" src={booksPic} alt="books"></img>
       <h1 className="navbar__heading">Quiz Crafter</h1>
       <div className="navbar__link-container">
         {user ? signedIn : notSignedIn}

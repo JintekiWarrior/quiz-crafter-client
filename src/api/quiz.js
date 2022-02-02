@@ -2,6 +2,7 @@
 import apiUrl from "../apiConfig"
 import axios from "axios"
 
+// Quiz Post Request
 export const createQuiz = (user, title, description) => {
     return axios({
         method: 'POST',
@@ -16,4 +17,13 @@ export const createQuiz = (user, title, description) => {
             }
         }
     })
-} 
+}
+
+// Quiz Index Request
+export const indexQuiz = () => {
+    return axios({
+        method: 'GET',
+        url: apiUrl + '/quiz'
+    })
+}
+

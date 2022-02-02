@@ -10,6 +10,7 @@ import ChangePassword from './components/ChangePassword/ChangePassword'
 import SignOut from './components/SignOut/SignOut'
 import Home from './components/Home/Home'
 import CreateQuiz from './components/CreateQuiz/CreateQuiz'
+import IndexQuiz from './components/IndexQuiz/IndexQuiz'
 
 // material ui components
 // import Container from '@material-ui/core/Container'
@@ -49,6 +50,9 @@ class App extends Component {
         )} />
         <AuthRoute user={user} path='/create-quiz' render={() => (
           <CreateQuiz user={user} />
+        )} />
+        <Route path='/show-quizzes' render={() => (
+          <IndexQuiz />
         )} />
       </Fragment>
     )
