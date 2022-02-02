@@ -27,3 +27,14 @@ export const indexQuiz = () => {
     })
 }
 
+// Quiz Show Request
+export const showQuiz = (user, quizId) => {
+    return axios({
+        method: 'GET',
+        url: apiUrl + '/quiz/' + quizId,
+        headers: {
+            'Authorization': `Bearer ${user.token}`
+        }
+    })
+}
+
