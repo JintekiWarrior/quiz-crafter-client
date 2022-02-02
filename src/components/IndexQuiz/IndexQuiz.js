@@ -7,7 +7,7 @@ const IndexQuiz = () => {
 
     // Api request to show the quiz
     useEffect(() => {
-        const show = async () => {
+        const showQuizzes = async () => {
             try {
                 const res = await indexQuiz()
                 setQuizzes(res.data.quiz)
@@ -15,7 +15,7 @@ const IndexQuiz = () => {
                 console.log(error)
             }
         }
-        show()
+        showQuizzes()
     }, []) 
 
     return (
