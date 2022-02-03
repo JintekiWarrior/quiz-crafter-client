@@ -1,39 +1,31 @@
+@import './../../css/variables.scss';
+
 .navbar {
-    position: relative;
-    height: 30vh;
-    width: 90vw;
+    width: 141.5rem;
     margin: 3rem auto;
+    background-color: $color-primary;
+    border-top: .7rem solid black;
+    border-bottom: .7rem solid black;
+    border-radius: 7px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
 
-    &__image {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        position: absolute;
-        z-index: -1;
-        filter: brightness(50%);
-    }
-
-    &__heading {
-        color: #fff;
-    }
-
     &__link-container {
         font-size: 3rem;
         letter-spacing: .3rem;
+        width: 100%;
         font-weight: 400;
-        width: 50%;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
     }
 
     &__link {
         text-decoration: none;
-        color: #fff;
+        color: initial;
+        margin: 1rem 0;
     }
 
     &__l1 {

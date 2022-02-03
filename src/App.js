@@ -12,6 +12,7 @@ import Home from './components/Home/Home'
 import CreateQuiz from './components/CreateQuiz/CreateQuiz'
 import IndexQuiz from './components/IndexQuiz/IndexQuiz'
 import ShowQuiz from './components/ShowQuiz/ShowQuiz'
+import Heading from './components/Heading/Heading'
 
 // material ui components
 // import Container from '@material-ui/core/Container'
@@ -33,6 +34,7 @@ class App extends Component {
 
     return (
       <Fragment>
+        <Heading />
         <Navbar user={user} />
         <Route path='/sign-up' render={() => (
           <SignUp user={user} setUser={this.setUser} />
