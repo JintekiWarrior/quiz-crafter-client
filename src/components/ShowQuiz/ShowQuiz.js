@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { showQuiz } from './../../api/quiz'
+import { showQuiz, deleteQuiz } from './../../api/quiz'
 import { useParams, Link } from 'react-router-dom'
 
 const ShowQuiz = ({ user }) => {
@@ -20,11 +20,26 @@ const ShowQuiz = ({ user }) => {
         show()
     }, [])
 
+    // Api request to delete a quiz
+    const onDeleteQuiz = event => {
+        event.preventDefault()
+        const destroy = async () => {
+            try {
+                const res = await deleteQuiz(user, id)
+                console.log(res + "data deleted")
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        destroy()
+    }
+
     return (
         <div>
             <h3>{quiz.title}</h3>
             <p>{quiz.description}</p>
             <Link to={`/update-quiz/${id}`}>Update</Link>
+            <button onClick={onDeleteQuiz}>Delete</button>
         </div>
     )
 }

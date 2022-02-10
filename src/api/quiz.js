@@ -54,3 +54,14 @@ export const updateQuiz = (user, quizId, title, description) => {
         }
     })
 }
+
+// Quiz Delete Request
+export const deleteQuiz = (user, quizId) => {
+    return axios({
+        method: 'DELETE',
+        url: apiUrl + '/quiz/' + quizId,
+        headers: {
+            'Authorization': `Bearer ${user.token}`
+        }
+    })
+}
