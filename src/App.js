@@ -13,6 +13,7 @@ import CreateQuiz from './components/CreateQuiz/CreateQuiz'
 import IndexQuiz from './components/IndexQuiz/IndexQuiz'
 import ShowQuiz from './components/ShowQuiz/ShowQuiz'
 import Heading from './components/Heading/Heading'
+import UpdateQuiz from './components/UpdateQuiz/UpdateQuiz'
 
 // material ui components
 // import Container from '@material-ui/core/Container'
@@ -60,6 +61,9 @@ class App extends Component {
         <AuthRoute user={user} path='/show-quizzes/:id' render={() => (
           <ShowQuiz user={user} />
         )} />
+        <AuthRoute user={user} path='/update-quiz/:id' render={() => (
+          <UpdateQuiz user={user} />
+        )}/>
       </Fragment>
     )
   }
