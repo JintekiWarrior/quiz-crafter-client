@@ -38,3 +38,19 @@ export const showQuiz = (user, quizId) => {
     })
 }
 
+// Quiz Update Request
+export const updateQuiz = (user, quizId, title, description) => {
+    return axios({
+        method: 'PATCH',
+        url: apiUrl + '/quiz/' + quizId,
+        headers: {
+            'Authorization': `Bearer ${user.token}`
+        },
+        data: {
+            quiz: {
+                title: title,
+                description: description
+            }
+        }
+    })
+}

@@ -24,7 +24,7 @@ const ShowQuiz = ({ user }) => {
         <div>
             <h3>{quiz.title}</h3>
             <p>{quiz.description}</p>
-            <Link to='/update-quiz/:id'>Update</Link>
+            <Link to={`/update-quiz/${id}`}>Update</Link>
         </div>
     )
 }
