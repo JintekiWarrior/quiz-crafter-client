@@ -35,11 +35,13 @@ const ShowQuiz = ({ user }) => {
     }
 
     return (
-        <div>
-            <h3>{quiz.title}</h3>
-            <p>{quiz.description}</p>
-            <Link to={`/update-quiz/${id}`}>Update</Link>
-            <button onClick={onDeleteQuiz}>Delete</button>
+        <div className='quiz__container'>
+            <h3 className='quiz__heading'>{quiz.title}</h3>
+            <p className='quiz__description'>{quiz.description}</p>
+            <div className='quiz__button-container'>
+                <Link className='quiz__link' to={`/update-quiz/${id}`}>Update</Link>
+                <button className='quiz__button' onClick={onDeleteQuiz}>Delete</button>
+            </div>
         </div>
     )
 }

@@ -1,3 +1,5 @@
+import './Index.scss'
+import './../../css/quiz.scss'
 import React, { useState, useEffect } from 'react'
 import { indexQuiz } from './../../api/quiz'
 import { Link } from 'react-router-dom'
@@ -20,15 +22,16 @@ const IndexQuiz = () => {
     }, []) 
 
     return (
-        <div>
+        <div className='quiz'>
             {quizzes.map(quiz => (
-                <div key={quiz._id}>
-                    <h4>{quiz.title}</h4>
-                    <p>{quiz.description}</p>
+                <div className='quiz__container' key={quiz._id}>
+                    <h4 className='quiz__heading'>{quiz.title}</h4>
+                    <p className='quiz__description'>{quiz.description}</p>
                     <Link
+                        className='quiz__link'
                         to={`/show-quizzes/${quiz._id}`}
                     >
-                        Go To ➡
+                        Go To 
                     </Link>
                 </div>
             ))}

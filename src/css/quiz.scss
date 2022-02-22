@@ -1,0 +1,47 @@
+@import './variables.scss';
+
+.quiz {
+    &__container {
+        border: 1px solid black;
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__container > * {
+        margin-bottom: 2rem;
+    }
+
+    &__heading {
+        font-size: 3rem;
+    }
+
+    &__description {
+
+    }
+
+    &__button-container {
+        width: 15%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__link {
+        background-color: $color-primary;
+        color: black;
+        text-decoration: none;
+        padding: 1rem;
+        border-radius: 3px;
+    }
+
+    &__button {
+        font-size: 20px;
+        font-family: 'Times New Roman', Times, serif;
+        background-color: $color-primary;
+        border: none;
+        padding: 1rem;
+    }
+}
