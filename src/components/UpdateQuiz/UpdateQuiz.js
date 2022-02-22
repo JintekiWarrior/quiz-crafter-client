@@ -38,6 +38,7 @@ const UpdateQuiz = ({ user }) => {
                 setTitle={setTitle}
                 description={description}
                 setDescription={setDescription}
+                formTitle={"Update Quiz"}
             />
         </div>
     )

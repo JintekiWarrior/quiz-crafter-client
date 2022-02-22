@@ -1,7 +1,6 @@
 .heading {
     position: relative;
     height: 40rem;
-    width: 80vw;
     margin: 2rem auto;
 
     &__image {
@@ -11,6 +10,7 @@
         position: absolute;
         z-index: -1;
         filter: brightness(50%);
+        border-radius: 10px;
     }
 
     &__content {

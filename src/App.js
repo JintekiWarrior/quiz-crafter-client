@@ -34,7 +34,7 @@ class App extends Component {
     const { user } = this.state
 
     return (
-      <Fragment>
+      <div className='main-page-container'>
         <Heading />
         <Navbar user={user} />
         <Route path='/sign-up' render={() => (
@@ -64,7 +64,7 @@ class App extends Component {
         <AuthRoute user={user} path='/update-quiz/:id' render={() => (
           <UpdateQuiz user={user} />
         )}/>
-      </Fragment>
+      </div>
     )
   }
 }

@@ -35,6 +35,7 @@ const CreateQuiz = ({ user }) => {
                 setTitle={setTitle}
                 description={description}
                 setDescription={setDescription}
+                formTitle={"Create a Quiz"}
             />
         </div>
     )
