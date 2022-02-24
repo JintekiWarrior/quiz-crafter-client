@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { showQuiz, deleteQuiz } from './../../api/quiz'
 import { useParams, Link } from 'react-router-dom'
+import CreateQuestion from '../CreateQuestion/CreateQuestion'
 
 const ShowQuiz = ({ user }) => {
     const [quiz, setQuiz] = useState([])
+    const [question, setQuestion] = useState([])
 
     let { id } = useParams()
 
@@ -34,13 +36,25 @@ const ShowQuiz = ({ user }) => {
         destroy()
     }
 
+    const onAddQuestion = event => {
+        setQuestion(question => [...question, <CreateQuestion />])
+    }
+
     return (
-        <div className='quiz__container'>
-            <h3 className='quiz__heading'>{quiz.title}</h3>
-            <p className='quiz__description'>{quiz.description}</p>
-            <div className='quiz__button-container'>
-                <Link className='quiz__link' to={`/update-quiz/${id}`}>Update</Link>
-                <button className='quiz__button' onClick={onDeleteQuiz}>Delete</button>
+        <div>
+            <div className='quiz__container'>
+                <h3 className='quiz__heading'>{quiz.title}</h3>
+                <p className='quiz__description'>{quiz.description}</p>
+                <div className='quiz__button-container'>
+                    <Link className='quiz__link' to={`/update-quiz/${id}`}>Update</Link>
+                    <button className='quiz__button' onClick={onDeleteQuiz}>Delete</button>
+                </div>
+            </div>
+            <div>
+                <button onClick={onAddQuestion}>Add Question</button>
+                {question.map((item, i) => (
+                    <div key={i}>{item}</div>
+                ))}
             </div>
         </div>
     )
