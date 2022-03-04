@@ -36,8 +36,15 @@ const ShowQuiz = ({ user }) => {
         destroy()
     }
 
+    // allows the user to add multiple question forms 
     const onAddQuestion = event => {
-        setQuestion(question => [...question, <CreateQuestion />])
+        setQuestion(question => [
+            ...question, 
+            <CreateQuestion
+                user={user}
+                quizId={id} 
+            />
+        ])
     }
 
     return (

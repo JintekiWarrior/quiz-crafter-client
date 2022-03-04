@@ -13,7 +13,7 @@ export const createQuestion = (
     ) => {
         return axios({
             method: 'POST',
-            url: apiUrl + '/quiz',
+            url: apiUrl + '/questions',
             headers: {
                 'Authorization': `Bearer ${user.token}`
             },
