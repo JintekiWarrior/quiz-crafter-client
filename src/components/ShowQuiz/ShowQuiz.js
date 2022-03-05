@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { showQuiz, deleteQuiz } from './../../api/quiz'
 import { useParams, Link } from 'react-router-dom'
 import CreateQuestion from '../CreateQuestion/CreateQuestion'
+import ShowQuestions from '../ShowQuestions/ShowQuestions'
 
 const ShowQuiz = ({ user }) => {
     const [quiz, setQuiz] = useState([])
-    const [question, setQuestion] = useState(false)
+    const [showQuestionForm, setShowQuestionForm] = useState(false)
+    const [showQuestions, setShowQuestions] = useState([])
 
     let { id } = useParams()
 
@@ -15,12 +17,14 @@ const ShowQuiz = ({ user }) => {
             try {
                 const res = await showQuiz(user, id)
                 setQuiz(res.data.quiz)
+                setShowQuestions(res.data.quiz.questions)
+                console.log(res.data.quiz.questions)
             } catch (error) {
                 console.log(error)
             }
         }
         show()
-    }, [])
+    }, [showQuestions])
 
     // Api request to delete a quiz
     const onDeleteQuiz = event => {
@@ -38,8 +42,7 @@ const ShowQuiz = ({ user }) => {
 
     // allows the user to add multiple question forms 
     const onAddQuestion = event => {
-        !question ? setQuestion(true) : setQuestion(false)
-        console.log(question)
+        !showQuestionForm ? setShowQuestionForm(true) : setShowQuestionForm(false)
     }
 
     return (
@@ -53,7 +56,8 @@ const ShowQuiz = ({ user }) => {
                     <button className='quiz__button' onClick={onAddQuestion}>Add Question</button>
                 </div>
             </div>
-            { question ? <CreateQuestion user={user} quizId={id} /> : null }
+            { showQuestionForm ? <CreateQuestion user={user} quizId={id} /> : null }
+            <ShowQuestions showQuestions={showQuestions} />
         </div>
     )
 }
