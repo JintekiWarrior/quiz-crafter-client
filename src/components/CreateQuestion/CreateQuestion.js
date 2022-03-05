@@ -24,13 +24,16 @@ const CreateQuestion = ({ user, quizId }) => {
                     wrongAnswerTwo,
                     quizId
                 )
-                console.log(res.data)
             } catch (error) {
                 console.log(error)
             }
         }
 
         create()
+        setQuestion('')
+        setRightAnswer('')
+        setWrongAnswerOne('')
+        setWrongAnswerTwo('')
     }
 
     return (

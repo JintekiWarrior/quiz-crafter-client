@@ -5,7 +5,7 @@ import CreateQuestion from '../CreateQuestion/CreateQuestion'
 
 const ShowQuiz = ({ user }) => {
     const [quiz, setQuiz] = useState([])
-    const [question, setQuestion] = useState([])
+    const [question, setQuestion] = useState(false)
 
     let { id } = useParams()
 
@@ -38,13 +38,8 @@ const ShowQuiz = ({ user }) => {
 
     // allows the user to add multiple question forms 
     const onAddQuestion = event => {
-        setQuestion(question => [
-            ...question, 
-            <CreateQuestion
-                user={user}
-                quizId={id} 
-            />
-        ])
+        !question ? setQuestion(true) : setQuestion(false)
+        console.log(question)
     }
 
     return (
@@ -55,14 +50,10 @@ const ShowQuiz = ({ user }) => {
                 <div className='quiz__button-container'>
                     <Link className='quiz__link' to={`/update-quiz/${id}`}>Update</Link>
                     <button className='quiz__button' onClick={onDeleteQuiz}>Delete</button>
+                    <button className='quiz__button' onClick={onAddQuestion}>Add Question</button>
                 </div>
             </div>
-            <div>
-                <button onClick={onAddQuestion}>Add Question</button>
-                {question.map((item, i) => (
-                    <div key={i}>{item}</div>
-                ))}
-            </div>
+            { question ? <CreateQuestion user={user} quizId={id} /> : null }
         </div>
     )
 }

@@ -11,20 +11,20 @@ export const createQuestion = (
     wrongAnswerTwo,
     quizId
     ) => {
-        return axios({
-            method: 'POST',
-            url: apiUrl + '/questions',
-            headers: {
-                'Authorization': `Bearer ${user.token}`
-            },
-            data: {
-                question: {
-                    question: question,
-                    rightAnswer: rightAnswer,
-                    wrongAnswerOne: wrongAnswerOne,
-                    wrongAnswerTwo: wrongAnswerTwo,
-                    quizId: quizId
-                }
+    return axios({
+        method: 'POST',
+        url: apiUrl + '/questions',
+        headers: {
+            'Authorization': `Bearer ${user.token}`
+        },
+        data: {
+            question: {
+                question: question,
+                rightAnswer: rightAnswer,
+                wrongAnswerOne: wrongAnswerOne,
+                wrongAnswerTwo: wrongAnswerTwo,
+                quizId: quizId
             }
-        })
-    }
+        }
+    })
+}

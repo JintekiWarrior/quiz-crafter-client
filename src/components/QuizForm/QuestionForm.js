@@ -22,7 +22,7 @@ const QuizForm = ({
             <form className='form__input-container' onSubmit={onSubmitQuestion}>
                 <input
                     className='form__input'
-                    placeholder="Quiz Title" 
+                    placeholder="What is the question?" 
                     value={question}
                     onChange={e => setQuestion(e.target.value)}
                     label="title" 
@@ -30,7 +30,7 @@ const QuizForm = ({
                 />
                 <input
                     className='form__input'
-                    placeholder="Describe your Quiz"
+                    placeholder="Answer One"
                     value={rightAnswer}
                     onChange={e => setRightAnswer(e.target.value)}
                     label="description" 
@@ -38,7 +38,7 @@ const QuizForm = ({
                 />
                 <input
                     className='form__input'
-                    placeholder="Describe your Quiz"
+                    placeholder="Answer Two"
                     value={wrongAnswerOne}
                     onChange={e => setWrongAnswerOne(e.target.value)}
                     label="description" 
@@ -46,7 +46,7 @@ const QuizForm = ({
                 />
                 <input
                     className='form__input'
-                    placeholder="Describe your Quiz"
+                    placeholder="Answer Three"
                     value={wrongAnswerTwo}
                     onChange={e => setWrongAnswerTwo(e.target.value)}
                     label="description" 
