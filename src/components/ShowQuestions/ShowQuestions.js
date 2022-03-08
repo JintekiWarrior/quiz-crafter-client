@@ -11,6 +11,7 @@ const ShowQuestions = ({ showQuestions }) => {
                         <li className="quiz__list-item">{item.wrongAnswerOne}</li>
                         <li className="quiz__list-item">{item.wrongAnswerTwo}</li>
                     </ul>
+                    <button className="quiz__button">Update</button>
                 </div>
             ))}
         </div>

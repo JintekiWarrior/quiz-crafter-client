@@ -24,7 +24,7 @@ const ShowQuiz = ({ user }) => {
             }
         }
         show()
-    }, [showQuestions])
+    }, [])
 
     // Api request to delete a quiz
     const onDeleteQuiz = event => {
@@ -56,7 +56,13 @@ const ShowQuiz = ({ user }) => {
                     <button className='quiz__button' onClick={onAddQuestion}>Add Question</button>
                 </div>
             </div>
-            { showQuestionForm ? <CreateQuestion user={user} quizId={id} /> : null }
+            { showQuestionForm ? <CreateQuestion 
+                user={user} 
+                quizId={id} 
+                setShowQuestions={setShowQuestions} 
+                showQuestions={showQuestions} 
+                /> : null 
+            }
             <ShowQuestions showQuestions={showQuestions} />
         </div>
     )
