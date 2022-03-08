@@ -4,7 +4,7 @@ import { createQuestion } from './../../api/question'
 import QuestionForm from './../QuizForm/QuestionForm'
 
 // component that allows the user to create a question 
-const CreateQuestion = ({ user, quizId, setShowQuestions, showQuestions }) => {
+const CreateQuestion = ({ user, quizId, setIsListUpdated, isListUpdated }) => {
     // hooks to store request variables
     const [question, setQuestion] = useState('')
     const [rightAnswer, setRightAnswer] = useState('')
@@ -24,9 +24,8 @@ const CreateQuestion = ({ user, quizId, setShowQuestions, showQuestions }) => {
                     wrongAnswerTwo,
                     quizId
                 )
-                console.log(res.data)
-                setShowQuestions(showQuestions => [...showQuestions, res.data.quiz.questions])
-                // console.log(showQuestions)
+                setIsListUpdated(isListUpdated += 1)
+                console.log("list updated", isListUpdated)
             } catch (error) {
                 console.log(error)
             }

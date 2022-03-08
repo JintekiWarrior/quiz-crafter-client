@@ -8,6 +8,7 @@ const ShowQuiz = ({ user }) => {
     const [quiz, setQuiz] = useState([])
     const [showQuestionForm, setShowQuestionForm] = useState(false)
     const [showQuestions, setShowQuestions] = useState([])
+    const [isListUpdated, setIsListUpdated] = useState([])
 
     let { id } = useParams()
 
@@ -18,13 +19,12 @@ const ShowQuiz = ({ user }) => {
                 const res = await showQuiz(user, id)
                 setQuiz(res.data.quiz)
                 setShowQuestions(res.data.quiz.questions)
-                console.log(res.data.quiz.questions)
             } catch (error) {
                 console.log(error)
             }
         }
         show()
-    }, [])
+    }, [isListUpdated])
 
     // Api request to delete a quiz
     const onDeleteQuiz = event => {
@@ -59,8 +59,8 @@ const ShowQuiz = ({ user }) => {
             { showQuestionForm ? <CreateQuestion 
                 user={user} 
                 quizId={id} 
-                setShowQuestions={setShowQuestions} 
-                showQuestions={showQuestions} 
+                setIsListUpdated={setIsListUpdated}
+                isListUpdated={isListUpdated} 
                 /> : null 
             }
             <ShowQuestions showQuestions={showQuestions} />
