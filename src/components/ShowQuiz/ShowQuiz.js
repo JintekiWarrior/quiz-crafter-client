@@ -8,7 +8,7 @@ const ShowQuiz = ({ user }) => {
     const [quiz, setQuiz] = useState([])
     const [showQuestionForm, setShowQuestionForm] = useState(false)
     const [showQuestions, setShowQuestions] = useState([])
-    const [isListUpdated, setIsListUpdated] = useState([])
+    const [isListUpdated, setIsListUpdated] = useState(0)
 
     let { id } = useParams()
 
