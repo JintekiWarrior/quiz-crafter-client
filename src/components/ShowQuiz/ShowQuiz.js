@@ -63,7 +63,7 @@ const ShowQuiz = ({ user }) => {
                 isListUpdated={isListUpdated} 
                 /> : null 
             }
-            <ShowQuestions showQuestions={showQuestions} />
+            <ShowQuestions showQuestions={showQuestions} quizId={id} user={user} />
         </div>
     )
 }

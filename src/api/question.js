@@ -28,3 +28,19 @@ export const createQuestion = (
         }
     })
 }
+
+// Question Delete Request
+export const deleteQuestion = (user, quizId, questionId) => {
+    return axios({
+        method: 'DELETE',
+        url: apiUrl + '/questions/' + questionId,
+        headers: {
+            'Authorization': `Bearer ${user.token}`
+        },
+        data: {
+            question: {
+                quizId
+            }
+        }
+    })
+}
