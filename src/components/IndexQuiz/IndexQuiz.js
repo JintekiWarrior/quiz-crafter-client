@@ -35,7 +35,7 @@ const IndexQuiz = () => {
                     </Link>
                     <Link
                         className='quiz__link'
-                        to='/take-quiz'
+                        to={`/take-quiz/${quiz._id}`}
                     >Take Quiz</Link>
                 </div>
             ))}

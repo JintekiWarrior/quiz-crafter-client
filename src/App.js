@@ -65,7 +65,7 @@ class App extends Component {
         <AuthRoute user={user} path='/update-quiz/:id' render={() => (
           <UpdateQuiz user={user} />
         )}/>
-        <AuthRoute user={user} path='/take-quiz' render={() => (
+        <AuthRoute user={user} path='/take-quiz/:id' render={() => (
           <TakeQuiz user={user} />
         )} />
       </div>
