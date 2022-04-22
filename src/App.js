@@ -14,6 +14,7 @@ import IndexQuiz from './components/IndexQuiz/IndexQuiz'
 import ShowQuiz from './components/ShowQuiz/ShowQuiz'
 import Heading from './components/Heading/Heading'
 import UpdateQuiz from './components/UpdateQuiz/UpdateQuiz'
+import TakeQuiz from './components/TakeQuiz/TakeQuiz'
 
 // material ui components
 // import Container from '@material-ui/core/Container'
@@ -64,6 +65,9 @@ class App extends Component {
         <AuthRoute user={user} path='/update-quiz/:id' render={() => (
           <UpdateQuiz user={user} />
         )}/>
+        <AuthRoute user={user} path='/take-quiz' render={() => (
+          <TakeQuiz user={user} />
+        )} />
       </div>
     )
   }
