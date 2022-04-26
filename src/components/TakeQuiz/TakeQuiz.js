@@ -50,14 +50,8 @@ const TakeQuiz = ({ user }) => {
     setShowScore(true)
   }
 
-  console.log(score)
-
-  return (
-    <div>
-      <div className='quiz__container'>
-        <h3 className='quiz__heading'>{quiz.title}</h3>
-        <p className='quiz__description'>{quiz.description}</p>
-      </div>
+  const getQuiz = () => {
+    return (
       <form id='take-quiz-form' onSubmit={onSubmitQuiz}>
         {questions.map(item => (
           <div className='quiz__container' key={item._id}>
@@ -72,7 +66,16 @@ const TakeQuiz = ({ user }) => {
         ))}
         <button className='quiz__button' type='submit'>Submit</button>
       </form>
-      { showScore && <ShowScore score={score} /> }
+    )
+  }
+
+  return (
+    <div>
+      <div className='quiz__container'>
+        <h3 className='quiz__heading'>{quiz.title}</h3>
+        <p className='quiz__description'>{quiz.description}</p>
+      </div>
+      { showScore ? <ShowScore score={score} /> : getQuiz() }
     </div>
   )
 }
