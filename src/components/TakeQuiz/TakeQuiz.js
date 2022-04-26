@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { showQuiz } from './../../api/quiz'
 import { useParams } from 'react-router-dom'
+import ShowScore from '../ShowScore/ShowScore'
 
 // Component that allows the user to take a quiz
 const TakeQuiz = ({ user }) => {
@@ -8,6 +9,8 @@ const TakeQuiz = ({ user }) => {
   const [questions, setQuestions] = useState([])
 
   const [answers, setAnswers] = useState({})
+  const [score, setScore] = useState('')
+  const [showScore, setShowScore] = useState(false)
 
   let { id } = useParams()
   // make api call to quiz
@@ -43,9 +46,11 @@ const TakeQuiz = ({ user }) => {
         if (value === "rightAnswer") rightAnswerCount++
       }
     )
-    console.log(Math.trunc((rightAnswerCount / answerLength) * 100))
-    return Math.trunc((rightAnswerCount / answerLength) * 100)
+    setScore(Math.trunc((rightAnswerCount / answerLength) * 100).toString())
+    setShowScore(true)
   }
+
+  console.log(score)
 
   return (
     <div>
@@ -65,8 +70,9 @@ const TakeQuiz = ({ user }) => {
             <label htmlFor='wrongAnswerTwo'>{item.wrongAnswerTwo}</label><br/>
           </div>
         ))}
-        <button type='submit'>Submit</button>
+        <button className='quiz__button' type='submit'>Submit</button>
       </form>
+      { showScore && <ShowScore score={score} /> }
     </div>
   )
 }
