@@ -1,8 +1,12 @@
-.sign-up {
+@import "./variables.scss";
+
+.sign-up,
+.sign-in {
   margin: 0 auto;
   padding: 3rem;
-  border: 20px solid $color-primary;
+  border: 6px solid $color-secondary;
   border-radius: 1rem;
+  background-color: $color-primary;
 
   display: flex;
   flex-direction: column;
@@ -13,6 +17,7 @@
     font-size: 3rem;
     letter-spacing: 0.3rem;
     font-weight: 400;
+    color: $color-secondary;
     margin-bottom: 2rem;
   }
 
@@ -23,9 +28,21 @@
   }
 
   &__input {
+    border: 1px solid $color-primary;
+    border-radius: 5px;
     font-size: 1.8rem;
     padding: 1rem 0.4rem;
     margin-bottom: 1.5rem;
+
+    &::placeholder {
+      color: $color-secondary-light;
+    }
+
+    &:focus {
+      outline: none !important;
+      border: 1.5px solid $color-secondary;
+      border-radius: 5px;
+    }
   }
 
   &__btn {
