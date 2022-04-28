@@ -1,45 +1,45 @@
-@import './../../css/variables.scss';
+@import "./../../css/variables.scss";
 
 .navbar {
-    margin: 3rem auto;
-    background-color: $color-primary;
-    border-top: .7rem solid black;
-    border-bottom: .7rem solid black;
-    border-radius: 7px;
+  margin: 3rem auto;
+  background-color: $color-primary;
+  border-top: 0.7rem solid $color-secondary;
+  border-bottom: 0.7rem solid $color-secondary;
+  border-radius: 7px;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  &__link-container {
+    font-size: 3rem;
+    letter-spacing: 0.3rem;
+    width: 100%;
+    font-weight: 400;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: space-around;
+  }
 
-    &__link-container {
-        font-size: 3rem;
-        letter-spacing: .3rem;
-        width: 100%;
-        font-weight: 400;
-        display: flex;
-        justify-content: space-around;
-    }
+  &__link {
+    text-decoration: none;
+    color: initial;
+    margin: 1rem 0;
+  }
 
-    &__link {
-        text-decoration: none;
-        color: initial;
-        margin: 1rem 0;
-    }
+  &__l1 {
+    order: 2;
+  }
 
-    &__l1 {
-        order: 2;
-    }
+  &__l2 {
+    order: 3;
+  }
 
-    &__l2 {
-        order: 3;
-    }
+  &__l3 {
+    order: -1;
+  }
 
-    &__l3 {
-        order: -1;
-    }
-
-    &__l4 {
-        order: 1;
-    }
+  &__l4 {
+    order: 1;
+  }
 }
