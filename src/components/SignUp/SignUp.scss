@@ -1,34 +1,33 @@
 .sign-up {
-    max-width: 100rem;
-    margin: 0 auto;
-    padding: 3rem;
-    border: 1px solid black;
-    border-radius: 1rem;
+  margin: 0 auto;
+  padding: 3rem;
+  border: 1px solid black;
+  border-radius: 1rem;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__heading {
+    text-align: default;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  &__form {
+    width: 80%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+  }
 
-    &__heading {
-        text-align: default;
-        font-size: 3rem;
-        margin-bottom: 2rem;
-    }
+  &__input {
+    font-size: 1.8rem;
+    padding: 1rem 0.4rem;
+    margin-bottom: 1.5rem;
+  }
 
-    &__form {
-        width: 80%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    &__input {
-        font-size: 1.8rem;
-        padding: 1rem .4rem;
-        margin-bottom: 1.5rem;
-    }
-
-    &__btn {
-        font-size: 1.8rem;
-        padding: 1rem .4rem;
-    }
+  &__btn {
+    font-size: 1.8rem;
+    padding: 1rem 0.4rem;
+  }
 }
