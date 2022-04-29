@@ -1,3 +1,5 @@
+@import "./../../css/variables.scss";
+
 .heading {
   position: relative;
   height: 34rem;
@@ -20,7 +22,7 @@
     letter-spacing: 0.5rem;
     white-space: nowrap;
     padding: 2rem;
-    background-color: #fff;
+    background-color: $color-primary-transparent;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -34,12 +36,15 @@
     font-size: 7rem;
     margin-bottom: 1.8rem;
     letter-spacing: 1.6rem;
+    color: $color-secondary;
   }
 
   &__quote-top {
+    color: $color-secondary;
   }
 
   &__quote-bottom {
     margin-bottom: 3rem;
+    color: $color-secondary;
   }
 }

@@ -1,48 +1,52 @@
-@import './variables.scss';
+@import "./variables.scss";
 
 .quiz {
-    &__container {
-        border: 1px solid black;
-        margin-bottom: 2rem;
-        padding: 1.5rem;
-        border-radius: 1rem;
+  &__container {
+    border: 6px solid $color-secondary;
+    margin: 2rem auto;
+    padding: 3rem;
+    border-radius: 1rem;
+    max-width: 1040px;
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__heading {
+    font-size: 3rem;
+    color: $color-secondary;
+  }
+
+  &__button-box {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__btn {
+    font-size: 2rem;
+    padding: 1rem 0.4rem;
+    border: 2px solid $color-tertiary;
+    color: $color-tertiary;
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: 3px;
+    transition: color 0.3s ease-in-out, box-shadow 0.5s ease-in-out;
+
+    &:not(:last-child) {
+      margin-right: 1.5rem;
     }
 
-    &__container > * {
-        margin-bottom: 2rem;
+    &:hover {
+      box-shadow: inset 50rem 0 $color-tertiary;
+      color: white;
+      overflow: hidden;
+      cursor: pointer;
     }
 
-    &__heading {
-        font-size: 3rem;
+    &:active {
+      box-shadow: inset 50rem 0 $color-tertiary-light;
+      transition: box-shadow 0.2s ease-in;
     }
-
-    &__description {
-
-    }
-
-    &__button-container {
-        width: 15%;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    &__link {
-        background-color: $color-primary;
-        color: black;
-        text-decoration: none;
-        padding: 1rem;
-        border-radius: 3px;
-    }
-
-    &__button {
-        font-size: 20px;
-        font-family: 'Times New Roman', Times, serif;
-        background-color: $color-primary;
-        border: none;
-        padding: 1rem;
-    }
+  }
 }
