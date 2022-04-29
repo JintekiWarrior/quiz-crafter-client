@@ -1,3 +1,5 @@
+@import "./css/variables.scss";
+
 /* Basic Reset: Applies these properties and values to all html elements. * is the universal selector. */
 *,
 *::after,
@@ -5,6 +7,7 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  font-family: $font-text;
 }
 
 html {
@@ -23,4 +26,5 @@ h1 {
   font-size: 5rem;
   font-weight: 300;
   letter-spacing: 1.6rem;
+  font-family: $font-heading;
 }

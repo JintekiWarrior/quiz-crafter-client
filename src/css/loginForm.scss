@@ -1,12 +1,12 @@
 @import "./variables.scss";
 
-.sign-up,
-.sign-in {
+.form-box {
   margin: 0 auto;
-  padding: 3rem;
+  padding: 10rem 3rem;
   border: 6px solid $color-secondary;
   border-radius: 1rem;
   background-color: $color-primary;
+  max-width: 1040px;
 
   display: flex;
   flex-direction: column;

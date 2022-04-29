@@ -25,13 +25,13 @@ const SignUp = ({ setUser, history }) => {
   };
 
   return (
-    <div className="sign-up">
-      <h2 className="sign-up__heading" variant="h4" align="center">
+    <div className="form-box">
+      <h2 className="form-box__heading" variant="h4" align="center">
         Sign Up
       </h2>
-      <form className="sign-up__form" noValidate onSubmit={onSignUp}>
+      <form className="form-box__form" noValidate onSubmit={onSignUp}>
         <input
-          className="sign-up__input"
+          className="form-box__input"
           placeholder="EMAIL"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -40,7 +40,7 @@ const SignUp = ({ setUser, history }) => {
           required
         />
         <input
-          className="sign-up__input"
+          className="form-box__input"
           placeholder="PASSWORD"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -50,7 +50,7 @@ const SignUp = ({ setUser, history }) => {
           required
         />
         <input
-          className="sign-up__input"
+          className="form-box__input"
           placeholder="PASSWORD CONFIRMATION"
           value={passwordConfirm}
           onChange={(e) => setPasswordConfirm(e.target.value)}
@@ -60,7 +60,7 @@ const SignUp = ({ setUser, history }) => {
           required
         />
         <button
-          className="sign-up__btn"
+          className="form-box__btn"
           variant="contained"
           color="primary"
           type="submit"

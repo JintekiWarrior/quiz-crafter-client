@@ -28,13 +28,13 @@ const SignIn = ({ setUser, history }) => {
 
   // JSX component
   return (
-    <div className="sign-in">
-      <h2 className="sign-in__heading" variant="h4" align="center">
+    <div className="form-box">
+      <h2 className="form-box__heading" variant="h4" align="center">
         Sign In
       </h2>
-      <form className="sign-in__form" noValidate onSubmit={onSignIn}>
+      <form className="form-box__form" noValidate onSubmit={onSignIn}>
         <input
-          className="sign-in__input"
+          className="form-box__input"
           placeholder="EMAIL"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -43,7 +43,7 @@ const SignIn = ({ setUser, history }) => {
           required
         />
         <input
-          className="sign-in__input"
+          className="form-box__input"
           placeholder="PASSWORD"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -53,7 +53,7 @@ const SignIn = ({ setUser, history }) => {
           required
         />
         <button
-          className="sign-in__btn"
+          className="form-box__btn"
           variant="contained"
           color="primary"
           type="submit"
