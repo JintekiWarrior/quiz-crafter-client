@@ -1,3 +1,4 @@
+import "../../css/loginForm.scss";
 import React from "react";
 
 // Form to create a question
@@ -15,11 +16,11 @@ const QuizForm = ({
   setWrongAnswerTwo,
 }) => {
   return (
-    <div className="form">
-      <h3 className="form__title">{formTitle}</h3>
-      <form className="form__input-container" onSubmit={onSubmitQuestion}>
+    <div className="form-box">
+      <h3 className="form-box__heading">{formTitle}</h3>
+      <form className="form-box__form" onSubmit={onSubmitQuestion}>
         <input
-          className="form__input"
+          className="form-box__input"
           placeholder="What is the question?"
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
@@ -27,30 +28,30 @@ const QuizForm = ({
           required
         />
         <input
-          className="form__input"
-          placeholder="Answer One"
+          className="form-box__input"
+          placeholder="Right Answer"
           value={rightAnswer}
           onChange={(e) => setRightAnswer(e.target.value)}
           label="description"
           required
         />
         <input
-          className="form__input"
-          placeholder="Answer Two"
+          className="form-box__input"
+          placeholder="Wrong Answer"
           value={wrongAnswerOne}
           onChange={(e) => setWrongAnswerOne(e.target.value)}
           label="description"
           required
         />
         <input
-          className="form__input"
-          placeholder="Answer Three"
+          className="form-box__input"
+          placeholder="Wrong Answer"
           value={wrongAnswerTwo}
           onChange={(e) => setWrongAnswerTwo(e.target.value)}
           label="description"
           required
         />
-        <button className="form__button" type="submit">
+        <button className="form-box__btn" type="submit">
           Submit
         </button>
       </form>

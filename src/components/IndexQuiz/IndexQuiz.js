@@ -1,4 +1,3 @@
-import "./Index.scss";
 import "./../../css/quiz.scss";
 import React, { useState, useEffect } from "react";
 import { indexQuiz } from "./../../api/quiz";

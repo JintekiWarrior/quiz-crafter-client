@@ -1,0 +1,73 @@
+@import "./../../css/variables.scss";
+
+.take-quiz {
+  &__container {
+    border: 6px solid $color-secondary;
+    margin: 2rem auto;
+    padding: 3rem;
+    border-radius: 1rem;
+    max-width: 1040px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__heading {
+    font-size: 3rem;
+    color: $color-secondary;
+    margin-bottom: 3rem;
+  }
+
+  &__radio-container {
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__btn {
+    font-size: 1.8rem;
+    width: 1040px;
+    padding: 1rem 0.4rem;
+    background-color: transparent;
+    border: 2px solid $color-secondary;
+    color: $color-secondary;
+    border-radius: 5px;
+    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+    &:hover {
+      box-shadow: inset 60rem 60rem $color-secondary;
+      color: white;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    &:active {
+      box-shadow: inset 60rem 60rem $color-secondary-light;
+      transition: box-shadow 0.2s ease-in;
+    }
+  }
+}
+
+input:where([type="radio"]) {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  margin: calc(0.75em - 11px) 0.25rem 0 0;
+  margin-right: 3rem;
+  margin-bottom: 2rem;
+  vertical-align: top;
+  border: 3px solid $color-primary;
+  border-radius: 50%;
+  background: #fff no-repeat center center;
+}
+
+input:where([type="checkbox"], [type="radio"]):where(:active:not(:disabled), :focus) {
+  border-color: $color-secondary;
+  outline: none;
+}
+
+input[type="radio"]:checked {
+  background-color: $color-secondary-light;
+}
