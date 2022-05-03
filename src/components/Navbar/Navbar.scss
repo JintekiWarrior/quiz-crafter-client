@@ -30,14 +30,15 @@
     margin: 1rem 0;
     padding: 0.5rem;
     transition: color 0.3s ease-in-out, box-shadow 0.5s ease-in-out;
+    overflow: hidden;
 
     &:hover {
-      box-shadow: inset 10em 0 0 0 $color-secondary;
+      box-shadow: inset 12em 0 0 0 $color-secondary;
       color: $color-primary;
     }
 
     &:active {
-      box-shadow: inset 10em 0 0 0 $color-secondary-light;
+      box-shadow: inset 12em 0 0 0 $color-secondary-light;
       transition: box-shadow 0.2s ease-in;
     }
   }

@@ -27,13 +27,16 @@
 
   &__btn {
     font-size: 1.8rem;
+    display: block;
     width: 1040px;
+    max-width: 100%;
     padding: 1rem 0.4rem;
     background-color: transparent;
     border: 2px solid $color-secondary;
     color: $color-secondary;
     border-radius: 5px;
     transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin: 0 auto;
 
     &:hover {
       box-shadow: inset 60rem 60rem $color-secondary;
@@ -61,6 +64,7 @@ input:where([type="radio"]) {
   border: 3px solid $color-primary;
   border-radius: 50%;
   background: #fff no-repeat center center;
+  cursor: pointer;
 }
 
 input:where([type="checkbox"], [type="radio"]):where(:active:not(:disabled), :focus) {
