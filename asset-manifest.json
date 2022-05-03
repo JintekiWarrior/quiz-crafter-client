@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/quiz-crafter-client/static/css/main.61a0b777.chunk.css",
+    "main.css": "/quiz-crafter-client/static/css/main.6a91406f.chunk.css",
     "main.js": "/quiz-crafter-client/static/js/main.a8dd21d3.chunk.js",
     "main.js.map": "/quiz-crafter-client/static/js/main.a8dd21d3.chunk.js.map",
     "runtime-main.js": "/quiz-crafter-client/static/js/runtime-main.e86ad3f6.js",
@@ -8,14 +8,14 @@
     "static/js/2.8bacf419.chunk.js": "/quiz-crafter-client/static/js/2.8bacf419.chunk.js",
     "static/js/2.8bacf419.chunk.js.map": "/quiz-crafter-client/static/js/2.8bacf419.chunk.js.map",
     "index.html": "/quiz-crafter-client/index.html",
-    "static/css/main.61a0b777.chunk.css.map": "/quiz-crafter-client/static/css/main.61a0b777.chunk.css.map",
+    "static/css/main.6a91406f.chunk.css.map": "/quiz-crafter-client/static/css/main.6a91406f.chunk.css.map",
     "static/js/2.8bacf419.chunk.js.LICENSE.txt": "/quiz-crafter-client/static/js/2.8bacf419.chunk.js.LICENSE.txt",
     "static/media/books.a9b7fc2e.jpg": "/quiz-crafter-client/static/media/books.a9b7fc2e.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.e86ad3f6.js",
     "static/js/2.8bacf419.chunk.js",
-    "static/css/main.61a0b777.chunk.css",
+    "static/css/main.6a91406f.chunk.css",
     "static/js/main.a8dd21d3.chunk.js"
   ]
 }
